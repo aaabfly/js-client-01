@@ -1,13 +1,18 @@
 // ここにJavaScriptコードを書く
-const tarea = document.getElementById('tarea');
-const input1 = document.getElementById('input1');
-const input2 = document.getElementById('input2');
+const tareas = document.getElementById('tarea');
 const btn = document.getElementById('btn');
 const result = document.getElementById('result');
 
+for (let i = 0; i < tareas.length; i++) {
+    tareas[i].value = tareas[i].value.replace(/な/g, 'にゃ');
+    tareas[i].value = tareas[i].value.replace(/無/g, 'にゃ');
+}
+
+result.innerText = tareas;
+/*
 btn.addEventListener('click', () => {
-    let findtxt = input1.value;
-    let reptxt = input2.value;
+    let findtxt = input_na.value;
+    let reptxt = input_nya.value;
     let tagtxt = tarea.value;
 
     findtxt = new RegExp(findtxt, 'g');
@@ -15,3 +20,4 @@ btn.addEventListener('click', () => {
 
     result.innerText = tagtxt;
 });
+*/
